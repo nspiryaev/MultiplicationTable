@@ -1,0 +1,424 @@
+@import "normalize.scss"
+@import "reset.scss"
+
+@font-face
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: 400
+  src: url('../fonts/montserrat-v25-latin_cyrillic-regular.woff2'), url('../fonts/montserrat-v25-latin_cyrillic-regular.woff')
+
+@font-face
+  font-family: 'Montserrat'
+  font-style: bold
+  font-weight: 700
+  src: url('../fonts/montserrat-v25-latin_cyrillic-700.woff2'), url('../fonts/montserrat-v25-latin_cyrillic-700.woff')
+
+*
+  box-sizing: border-box
+
+a
+  text-decoration: none
+
+html
+  font-family: 'Montserrat', sans-serif
+
+$color__dark: #333333
+$color__wight: #ffffff
+$color__orange: #E76868
+$color__blue: #6386E0
+
+.section-multiplication
+  position: relative
+  padding: 40px 0 64px 0
+  height: 100vh
+  overflow: hidden
+  &__background
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: url('../img/bg.jpg') no-repeat center/cover
+    opacity: 0.05
+    z-index: -1
+  &__heading
+    margin-bottom: 100px
+    font-weight: 600
+    font-size: 48px
+    line-height: 1
+    text-align: center
+    color: $color__dark
+  &__wrapper
+    display: flex
+    justify-content: space-between
+  &__simulator
+    display: none
+  &__circle-big
+    position: absolute
+    right: -85px
+    top: -85px
+    z-index: -1
+
+.container
+  margin: 0 auto
+  padding: 0 15px
+  max-width: 1170px
+
+.digit-selection
+  position: relative
+  width: 270px
+  &__operation-selection
+    display: flex
+    justify-content: space-between
+    margin-bottom: 5px
+  &__item
+    padding: 10px 0
+    width: 130px
+    border-radius: 5px
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    text-align: center
+    background-color: $color__dark
+    color: $color__wight
+    &.is-active
+      background-color: $color__blue
+    &:hover
+      opacity: 0.8
+      transform: scale(1.025)
+      cursor: pointer
+  &__subtract
+    position: absolute
+    top: -72px
+    left: -100px
+    z-index: -1
+
+.digits
+  display: none
+  justify-content: space-between
+  flex-wrap: wrap
+  gap: 5px
+  &__item
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 75px
+    height: 55px
+    border-radius: 5px
+    font-weight: 400
+    font-size: 40px
+    line-height: 130%
+    background-color: $color__orange
+    color: $color__wight
+    &:hover
+      opacity: 0.8
+      transform: scale(1.025)
+      cursor: pointer
+    &:active
+      box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.6) inset
+    &.is-number-active
+      box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.6) inset
+
+.entire-table
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 55px
+  border-radius: 5px
+  font-weight: 400
+  font-size: 32px
+  line-height: 130%
+  background-color: $color__blue
+  color: $color__wight
+  &:hover
+    opacity: 0.8
+    transform: scale(1.025)
+    cursor: pointer
+  &:active
+    box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.6) inset
+  &.is-number-active
+    box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.6) inset
+
+.output-messages
+  margin-bottom: 10px
+  font-weight: 700
+  font-size: 20px
+  line-height: 130%
+  color: $color__dark
+  &__item
+    margin-bottom: 23px
+    &:last-child
+      margin-bottom: 0
+  &:last-child
+    margin-bottom: 32px
+  &__solved-task
+    margin-bottom: 79px
+    font-weight: 700
+    font-size: 32px
+    line-height: 130%
+
+.task
+  display: flex
+  align-items: center
+  margin-bottom: 200px
+  &__number
+    display: flex
+    align-items: center
+    font-weight: 700
+    font-size: 72px
+    line-height: 100px
+  &__block
+    margin-right: 20px
+  &__input
+    margin-right: 20px
+  &__circle
+    position: relative
+  &__substact
+    position: absolute
+    top: -85px
+    right: -65px
+    z-index: 1
+
+.counters
+  position: relative
+  display: flex
+  width: 960px
+  &__wrapper
+    display: flex
+    align-items: center
+    margin-right: 20px
+    &:last-child
+      margin-right: 0
+  &__item
+    position: relative
+    margin-right: 20px
+    padding: 7px 12px
+    border-radius: 5px
+    font-weight: 400
+    font-size: 18px
+    line-height: 1
+    color: $color__wight
+    z-index: 5
+  &__item_dark
+    background-color: $color__dark
+  &__item_orange
+    background-color: $color__orange
+  &__item_blue
+    background-color: $color__blue
+  &__number
+    font-weight: 700
+    font-size: 40px
+    line-height: 1
+  &__number_dark
+    color: $color__dark
+  &__number_orange
+    color: $color__orange
+  &__number_blue
+    color: $color__blue
+  &__circle-substract
+    position: absolute
+    top: -100px
+    left: -90px
+    z-index: 1
+
+.input
+  width: 150px
+  height: 72px
+  border: 1px solid #DBD6D6
+  border-radius: 5px
+  font-weight: 700
+  font-size: 72px
+  line-height: 1
+  text-align: center
+  &:focus
+    outline: 2px solid $color__blue
+
+.button
+  position: relative
+  width: 200px
+  height: 72px
+  border: none
+  border-radius: 5px
+  font-weight: 400
+  font-size: 28px
+  line-height: 1
+  color: $color__wight
+  background-color: $color__blue
+  z-index: 5
+  &:hover
+    opacity: 0.8
+    transform: scale(1.025)
+    cursor: pointer
+  &:active
+    box-shadow: 5px 5px 10px 0px rgba(34, 60, 80, 0.6) inset
+
+.is-active
+  display: block
+
+.is-number-active
+  display: flex
+
+.tabs-items
+  width: 70%
+
+@media (max-width: 1199px)
+  .container
+    max-width: 960px
+
+  .section-multiplication
+    height: auto
+    &__wrapper
+      display: flex
+      flex-direction: column
+      align-items: center
+    &__heading
+      margin-bottom: 50px
+    &__digit-selection
+      margin-bottom: 50px
+
+  .digit-selection
+    width: 80%
+    &__item
+      width: 49.5%
+
+  .task
+    margin-bottom: 150px
+
+  .simulator
+    &__output-messages
+      text-align: center
+
+@media (max-width: 991px)
+  .container
+    max-width: 720px
+
+  .section-multiplication
+    &__circle-big
+      display: none
+    &__heading
+      margin-bottom: 40px
+    &__digit-selection
+      margin-bottom: 40px
+    &__counters
+      flex-direction: column
+
+  .counters
+    align-items: center
+    width: 100%
+    &__wrapper
+      margin-right: 0
+    &__item
+      display: flex
+      justify-content: center
+      width: 155px
+    &__circle-substract
+      left: 35px
+
+  .digit-selection
+    width: 100%
+    &__operation-selection
+      margin-bottom: 5px
+
+  .digits
+    gap: 5px
+    &__item
+      width: 71px
+
+  .digit-selection
+    &__subtract
+      width: 250px
+
+  .output-messages
+    &__solved-task
+      margin-bottom: 30px
+
+  .task
+    flex-wrap: wrap
+    justify-content: center
+    margin-bottom: 110px
+    &__substact
+      display: none
+    &__number
+      font-size: 72px
+    &__input
+      margin-right: 0
+    &__block
+      margin-right: 10px
+
+  .input
+    width: 135px
+    height: 72px
+    font-size: 72px
+
+  .button
+    height: 80px
+
+@media (max-width: 767px)
+  .container
+    max-width: 540px
+
+  .digits
+    &__item
+      width: 50px
+      height: 50px
+      font-size: 32px
+
+  .entire-table
+    height: 50px
+    font-size: 28px
+
+  .task
+    margin-bottom: 40px
+    &__block
+      margin-right: 10px
+    &__number
+      font-size: 60px
+    &__input
+      width: 120px
+      font-size: 60px
+
+  .counters
+    &__circle-substract
+      top: -50px
+      left: -90px
+
+@media (max-width: 575px)
+  .container
+    max-width: 100%
+
+  .section-multiplication
+    &__heading
+      margin-bottom: 30px
+      font-size: 42px
+    &__digit-selection
+      margin-bottom: 30px
+
+  .counters
+    &__circle-substract
+      display: none
+
+  .digit-selection
+    &__subtract
+      display: none
+    &__digits
+      gap: 5px
+
+  .output-messages
+    margin-bottom: 10px
+    font-size: 18px
+
+  .task
+    margin-bottom: 50px
+    &__input
+      font-size: 48px
+    &__number
+      font-size: 48px
+      line-height: 180%
+
+@media (max-width: 476px)
+  .task
+    &__button
+      margin-top: 10px
+    &__number
+      line-height: 120%

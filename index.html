@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Тренажер таблицы умножения и деления</title>
+  <meta name="description"
+    content="Таблица умножения в игровой форме. Онлайн-тренажёр поможет Вашему ребёнку выучить таблицу умножения.">
+</head>
+
+<body>
+  <section class="section-multiplication">
+    <div class="section-multiplication__background"></div>
+    <div class="section-multiplication__container container">
+      <h1 class="section-multiplication__heading">
+        Таблица умножения
+      </h1>
+      <div class="section-multiplication__wrapper">
+        <div class="section-multiplication__digit-selection digit-selection">
+          <ul class="digit-selection__operation-selection tabs">
+            <li class="digit-selection__item multiply tab" data-tab="multiplication">
+              Умножение
+            </li>
+            <li class="digit-selection__item divide tab" data-tab="dividing">
+              Деление
+            </li>
+          </ul>
+
+          <ul class="digit-selection__digits multiplication digits tabs">
+            <li class="digits__item tab" data-item="2">
+              <span>2</span>
+            </li>
+            <li class="digits__item tab" data-item="3">
+              3
+            </li>
+            <li class="digits__item tab" data-item="4">
+              4
+            </li>
+            <li class="digits__item tab" data-item="5">
+              5
+            </li>
+            <li class="digits__item tab" data-item="6">
+              6
+            </li>
+            <li class="digits__item tab" data-item="7">
+              7
+            </li>
+            <li class="digits__item tab" data-item="8">
+              8
+            </li>
+            <li class="digits__item tab" data-item="9">
+              9
+            </li>
+            <li class="digits__item tab" data-item="10">
+              10
+            </li>
+            <li class="entire-table tab" data-item="11">
+              Вся таблица
+            </li>
+          </ul>
+
+          <ul class="digit-selection__digits dividing digits tabs">
+            <li class="digits__item tab" data-item="2">
+              <span>2</span>
+            </li>
+            <li class="digits__item tab" data-item="3">
+              3
+            </li>
+            <li class="digits__item tab" data-item="4">
+              4
+            </li>
+            <li class="digits__item tab" data-item="5">
+              5
+            </li>
+            <li class="digits__item tab" data-item="6">
+              6
+            </li>
+            <li class="digits__item tab" data-item="7">
+              7
+            </li>
+            <li class="digits__item tab" data-item="8">
+              8
+            </li>
+            <li class="digits__item tab" data-item="9">
+              9
+            </li>
+            <li class="digits__item tab" data-item="10">
+              10
+            </li>
+            <li class="entire-table tab" data-item="11">
+              Вся таблица
+            </li>
+          </ul>
+
+          <img src="./img/subtract-big.svg" alt="Круг абстрактный" class="digit-selection__subtract">
+        </div>
+
+        <div class="tabs-items">
+          <!-- Умножение -->
+          <div class="section-multiplication__simulator simulator tab-item multiplication is-active">
+            <div class="simulator__output-messages output-messages">
+              <div class="output-messages__item messege-result">
+                Умножение. Выбери число для тренировки...
+              </div>
+              <div class="output-messages__solved-task solved-task">
+                Твоя цель - набрать 100 очков!
+              </div>
+              <div class="output-messages__item messege-next-task">
+                Пример для решения:
+              </div>
+            </div>
+            <div class="simulator__task task">
+              <div class="task__number">
+                <p class="task__block first-number">
+                  a
+                </p>
+                <span class="task__block">
+                  *
+                </span>
+              </div>
+              <div class="task__number">
+                <p class="task__block second-number">
+                  b
+                </p>
+                <span class="task__block">
+                  =
+                </span>
+              </div>
+              <input type="text" class="task__input input i-multiplication">
+              <div class="task__circle">
+                <button class="task__button button b-multiplication">
+                  Проверить
+                </button>
+                <img src="./img/circle.png" alt="Круг абстакция" class="task__substact">
+              </div>
+            </div>
+            <div class="section-multiplication__counters counters">
+              <img src="./img/circle-substract.png" alt="Круги абстакция" class="counters__circle-substract">
+              <div class="counters__wrapper">
+                <div class="counters__item counters__item_dark">
+                  Правильно:
+                </div>
+                <div class="counters__number counters__number_dark">
+                  0
+                </div>
+              </div>
+              <div class="counters__wrapper">
+                <div class="counters__item counters__item_orange">
+                  Неправильно:
+                </div>
+                <div class="counters__number counters__number_orange">
+                  0
+                </div>
+              </div>
+              <div class="counters__wrapper">
+                <div class="counters__item counters__item_blue">
+                  Мои очки:
+                </div>
+                <div class="counters__number counters__number_blue">
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Деление -->
+          <div class="section-multiplication__simulator tab-item simulator dividing">
+            <div class="simulator__output-messages output-messages">
+              <div class="output-messages__item messege-result">
+                Деление. Выбери число для тренировки...
+              </div>
+              <div class="output-messages__solved-task solved-task">
+                Твоя цель - набрать 100 очков!
+              </div>
+              <div class="output-messages__item messege-next-task">
+                Пример для решения:
+              </div>
+            </div>
+            <div class="simulator__task task">
+              <div class="task__number">
+                <p class="task__block first-number">
+                  c
+                </p>
+                <span class="task__block">
+                  /
+                </span>
+              </div>
+              <div class="task__number">
+                <p class="task__block second-number">
+                  a
+                </p>
+                <span class="task__block">
+                  =
+                </span>
+              </div>
+              <input type="text" class="task__input input i-dividing">
+              <div class="task__circle">
+                <button class="task__button button b-dividing">
+                  Проверить
+                </button>
+                <img src="./img/circle.png" alt="Круг абстакция" class="task__substact">
+              </div>
+            </div>
+            <div class="section-multiplication__counters counters">
+              <img src="./img/circle-substract.png" alt="Круги абстакция" class="counters__circle-substract">
+              <div class="counters__wrapper">
+                <div class="counters__item counters__item_dark">
+                  Правильно:
+                </div>
+                <div class="counters__number counters__number_dark">
+                  0
+                </div>
+              </div>
+              <div class="counters__wrapper">
+                <div class="counters__item counters__item_orange">
+                  Неправильно:
+                </div>
+                <div class="counters__number counters__number_orange">
+                  0
+                </div>
+              </div>
+              <div class="counters__wrapper">
+                <div class="counters__item counters__item_blue">
+                  Мои очки:
+                </div>
+                <div class="counters__number counters__number_blue">
+                  0
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <img src="./img/circle-big.png" alt="Большой круг" class="section-multiplication__circle-big">
+  </section>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
